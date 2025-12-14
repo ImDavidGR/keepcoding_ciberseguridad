@@ -1,0 +1,3 @@
+[tool.black]
+line-length = 600
+skip-string-normalization = true
