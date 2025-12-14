@@ -1,0 +1,5 @@
+En el escenario propuesto, al tratarse de posibles transacciones con tarjeta bancaria, se requiere un sistema criptográfico robusto y eficiente. Para garantizar la confidencialidad de los campos sensibles, se puede utilizar el algoritmo AES con clave de 256 bits, ya que es un estándar ampliamente utilizado y ofrece un buen rendimiento.
+
+Sin embargo, AES por sí solo no garantiza la integridad del mensaje, por lo que debe complementarse con un mecanismo de autenticación como HMAC-SHA256, que permita detectar cualquier modificación del contenido. De esta forma se garantiza tanto la confidencialidad como la integridad de los mensajes, incluso en ausencia de TLS.
+
+Adicionalmente, para evitar ataques de repetición (replay attacks), se puede incluir en cada mensaje un valor único, como un timestamp o un nonce, que será verificado por el servidor. Dicho valor debe formar parte de los datos autenticados, de modo que un mensaje previamente capturado y reenviado sea rechazado por el sistema.
